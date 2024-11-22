@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Casa de Convenciones Las Mercedes</title>
+    
+    <!-- Enlaces a CSS y fuentes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+
+.navbar-nav .nav-link {
+    text-decoration: none; /* Quitar subrayado */
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: none; /* Quitar subrayado al pasar el mouse */
+}
+
+        /* Estilos de la barra de navegación */
+        .navbar-nav .nav-link {
+            font-family: 'Roboto', sans-serif;
+            transition: font-family 0.3s ease;
+        }
+    
+        .navbar-nav .nav-link:hover {
+            font-family: 'Playfair Display', serif;
+        }
+/* Estilos del botón "Reservar ahora" */
+.reservar-btn {
+    background: linear-gradient(135deg, #1e90ff, #00c9ff);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Quitar el subrayado */
+}
+
+.reservar-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #00c9ff, #1e90ff);
+    text-decoration: none; /* Asegurarse de que al pasar el mouse tampoco aparezca subrayado */
+}
+
+    
+        /* Estilos del footer */
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+    
+        .social-icons a {
+            margin: 0 15px;
+            color: #007bff;
+            font-size: 30px;
+            transition: color 0.3s;
+        }
+    
+        .social-icons a:hover {
+            color: #0056b3;
+        }
+    
+        /* Estilos de las tarjetas de características */
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+    
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+    
+        .feature-icon {
+            font-size: 40px;
+            color: #133c02;
+        }
+    
+        /* Alineación del botón dentro de la barra de navegación */
+        .navbar-nav .reservar-btn {
+            margin-left: 20px; /* Espacio entre el menú y el botón */
+        }
+        footer {
+        background-color: #f8f9fa;
+        padding: 50px 0; /* Incrementamos el padding superior e inferior */
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin: 0 15px;
+        color: #007bff;
+        font-size: 30px;
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #0056b3;
+    }
+
+    /* Estilos para añadir más espacio en la fila inferior */
+    footer .row {
+        margin-top: 30px; /* Espacio adicional entre las filas del footer */
+    }
+    footer {
+        background-color: #f8f9fa;
+        padding: 50px 0; /* Incrementamos el padding superior e inferior */
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin: 0 15px;
+        color: #007bff;
+        font-size: 30px;
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #0056b3;
+    }
+
+    /* Estilos para añadir más espacio en la fila inferior */
+    footer .row {
+        margin-top: 30px; /* Espacio adicional entre las filas del footer */
+    }
+    /*Estilo de los comentarios*/
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.review-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.review-info p {
+    font-size: 12px;
+    color: #999;
+}
+
+.review-text {
+    margin: 15px 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: normal;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*estilo responsive comentarios*/
+.reviews-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .reviews-container h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .reviews-container p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .reviews {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .review {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, background-color 0.3s;
+        width: 30%;
+        margin-bottom: 20px;
+    }
+
+    .review:hover {
+        transform: scale(1.05);
+        background-color: #f1f1f1;
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .review-info h3 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+
+    .review-info p {
+        font-size: 0.9em;
+        color: gray;
+    }
+
+    .review-text {
+        margin: 10px 0;
+        font-size: 1em;
+        color: #333;
+    }
+
+    .review a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: normal;
+        transition: color 0.3s;
+    }
+
+    .review a:hover {
+        color: #0056b3;
+    }
+
+    /* Media Queries para hacerlo responsive */
+    @media (max-width: 768px) {
+        .reviews {
+            display: block;
+        }
+
+        .review {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .review {
+            width: 48%;
+        }
+    }
+
+  /* Establecer un tamaño uniforme para las imágenes de la galería */
+  #galeria img {
+    width: 100%;
+    height: 250px; /* Puedes ajustar esta altura según tus preferencias */
+    object-fit: cover; /* Asegura que la imagen se recorte en lugar de deformarse */
+    margin-bottom: 15px; /* Espacio entre las imágenes */
+  }
+
+  /*estilo testimonios*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.testimonials-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.carousel {
+    position: relative;
+    width: 70%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.testimonial.active {
+    display: flex;
+}
+
+.testimonial-text {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.testimonial-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.testimonial-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #007BFF;
+}
+
+</style>
+
+    </style>
+    </head>
+    
+    <body>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../Proyecto iglesia/imagenes/image10.jpg" alt="Logo" width="150px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="instalaciones.html">Instalaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        
+                        
+                    </ul>
+                   <!-- Botón de reservar ahora -->
+<a href="reservas.html" class="reservar-btn">
+    <i>🔖</i> Reservar ahora
+</a>
+
+            </div>
+        </nav>
+    
+   
+    </div>
+
+    <section id="galeria" class="container">
+        <div class="text-center pt-5">
+          <h2>Galería</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="./imagenes/12.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-4">
+            <img src="./imagenes/A.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-4">
+            <img src="./imagenes/b37063520220502102924.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-4">
+            <img src="./imagenes/b.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-4">
+            <img src="./imagenes/im2.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-4">
+            <img src="./imagenes/b37063520220502102924.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </section>
+
+      <!--testimonios-->
+      <section class="testimonials-section">
+        <h2>Testimonios</h2>
+        <div class="carousel">
+            <div class="testimonial active">
+                <div class="testimonial-text">
+                    <strong>Zitong Zheng - China</strong>
+                    <p>Mi experiencia en Colombia fue asombrosa, como una chica de 21 años que no sabe nada de español en absoluto, estaba asustada al comienzo.</p>
+                   
+                </div>
+                <div class="testimonial-image">
+                    <img src="../Proyecto iglesia/imagenes/12.jpg" alt="Testimonio de Zitong Zheng">
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <strong>Juan Perez - España</strong>
+                    <p>Colombia me sorprendió con su calidez humana. No solo crecí profesionalmente, sino también a nivel personal.</p>
+              
+                </div>
+                <div class="testimonial-image">
+                    <img src="../Proyecto iglesia/imagenes/A.jpg" alt="Testimonio de Juan Perez">
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <strong>Maria Fernández - México</strong>
+                    <p>La experiencia en Bogotá me abrió puertas que nunca imaginé. Aprendí a trabajar en equipo y a adaptarme a nuevas culturas.</p>
+                
+                </div>
+                <div class="testimonial-image">
+                    <img src="../Proyecto iglesia/imagenes/Aa.jpg" alt="Testimonio de Maria Fernández">
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <strong>John Smith - Estados Unidos</strong>
+                    <p>Trabajar en Colombia me ayudó a expandir mi perspectiva global. Recomendaría esta experiencia a cualquiera que busque nuevos horizontes.</p>
+                  
+                </div>
+                <div class="testimonial-image">
+                    <img src="../Proyecto iglesia/imagenes/capilla-san-jose-768x1024.jpg" alt="Testimonio de John Smith">
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <strong>Sara Souza - Brasil</strong>
+                    <p>La vida en Colombia es tan vibrante y emocionante como su gente. Una experiencia inolvidable.</p>
+                  
+                </div>
+                <div class="testimonial-image">
+                    <img src="../Proyecto iglesia/imagenes/Captura de pantalla 2024-09-18 093832.png" alt="Testimonio de Sara Souza">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.dot');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active');
+        dots[i].classList.remove('active');
+        if (i === index) {
+            testimonial.classList.add('active');
+            dots[i].classList.add('active');
+        }
+    });
+}
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentTestimonial = index;
+        showTestimonial(index);
+    });
+});
+
+// Auto play testimonial every 5 seconds
+setInterval(() => {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}, 5000);
+
+    </script>
+      
+ <!-- Footer -->
+ <footer>
+  <div class="container">
+      <div class="row">
+          <!-- Columna 1: Sobre Nosotros -->
+          <div class="col-md-4">
+              <h5 class="text-uppercase">Sobre Nosotros</h5>
+              <p>En la Casa de Convenciones Las Mercedes, <br>
+                  nos dedicamos a hacer que tu evento sea inolvidable.</p>
+          </div>
+
+          <!-- Columna 2: Redes Sociales -->
+          <div class="col-md-4 text-center">
+              <h5 class="text-uppercase">Síguenos</h5>
+              <div class="social-icons">
+                  <a href="https://www.facebook.com" class="me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                  <a href="https://www.instagram.com" class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                  <a href="https://wa.me/573226489565" class="me-3"><i class="fab fa-whatsapp fa-2x"></i></a>
+              </div>
+          </div>
+
+          <!-- Columna 3: Contacto -->
+          <div class="col-md-4 text-md-end text-center">
+              <h5 class="text-uppercase">Contacto</h5>
+              <p>Correo: <a href="mailto:convencioneslasmercedes@gmail.com">lasmercedescmf@gmail.com</a><br>
+              Teléfono: +57 3123068317</p>
+          </div>
+      </div>
+
+      <!-- Fila inferior con el aviso de derechos reservados -->
+      <div class="row">
+          <div class="col-12 text-center mt-3">
+              <p>&copy; www.claretianoscolombiaecuador.org</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+<!-- Scripts de Bootstrap y JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+    

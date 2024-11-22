@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barra de Navegación y Footer</title>
+    
+    <!-- Enlaces a CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(151, 229, 132); /* Fondo */
+        }
+
+        h2 {
+            color: black; /* Cambiado a negro */
+        }
+
+        /* Estilos de la barra de navegación */
+        .navbar-nav .nav-link {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+            color: #101010;
+            text-decoration: none;
+            transition: font-family 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Estilos del botón "Reservar ahora" */
+        .reservar-btn {
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(135deg, #25d468, #04562c);
+            color: rgb(21, 21, 21);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .reservar-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #02401e, #02401e);
+        }
+        /* Estilos del footer */
+        footer {
+            background-color: rgb(151, 229, 132);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            color: #007bff;
+            font-size: 30px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        footer h5:hover {
+            color: #0056b3;
+        }
+
+        footer p:hover {
+            color: #333;
+        }
+
+        /* Estilos de las tarjetas */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+        }
+
+        .card:hover {
+            transform: rotate(3deg); /* Nueva animación de rotación */
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #caeabc; /* Fondo de la tarjeta */
+            border-radius: 15px; /* Bordes redondeados */
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Proyecto iglesia/imagenes/image10.jpg" alt="Logo" width="150px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="reservas.html" class="reservar-btn">
+                    <i>🔖</i> Reservar ahora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container py-4">
+            <div class="row">
+                <!-- Columna de la imagen del mapa -->
+                <div class="col-md-6">
+                    <img src="imagenes/mapa de ubicación.png" alt="Mapa de rutas sugeridas" class="img-fluid rounded shadow">
+                </div>
+    
+                <!-- Columna del texto explicativo -->
+                <div class="col-md-6">
+                    <h2>Primera Opción (sugerida):</h2>
+                    <p>
+                        Saliendo por la calle 80 a la altura del Rosal cruzamos hacia la izquierda y llegamos a Facatativá;
+                        una vez allí, buscamos la vía a Albán y después del peaje Jalisco se comienzan a observar los mojones
+                        que marcan el kilometraje. Al frente del mojón que señala el Km. 80, a mano derecha, y 4 Kms. antes
+                        de llegar a Sasaima, se encuentra la entrada.
+                    </p>
+                    <h2>Segunda Opción:</h2>
+                    <p>
+                        También se puede salir por la calle 13, se toma la carretera que de Bogotá va a Fontibón. Se pasa por Mosquera,
+                        Madrid, Facatativá y Albán. Al pasar el peaje, se continúa hasta llegar al Km. 81, donde se encuentra
+                        la entrada a las Mercedes.
+                    </p>
+
+
+                    <!-- Sección de calificación -->
+<h2>Califica tu experiencia:</h2>
+<form action="https://formspree.io/f/xpwzlkvr" method="POST">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="calificacion" class="form-label">Calificación (1-5):</label>
+        <input type="number" class="form-control" id="calificacion" name="calificacion" min="1" max="5" required>
+    </div>
+    <div class="mb-3">
+        <label for="comentario" class="form-label">Comentario:</label>
+        <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Calificación</button>
+</form>
+
+    </main>
+    
+    
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Columna 1: Sobre Nosotros -->
+                <div class="col-md-4">
+                    <h5 class="text-uppercase">Sobre Nosotros</h5>
+                    <p>Diseñado para albergar eventos como congresos, retiros, convivencias, seminarios y talleres. Nuestras instalaciones son utilizadas por entidades públicas, privadas, universidades y comunidades religiosas para realizar eventos institucionales y familiares, tanto a nivel nacional como internacional.</p>
+                </div>
+
+                <!-- Columna 2: Redes Sociales -->
+                <div class="col-md-4 text-center">
+                    <h5 class="text-uppercase">Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://wa.me/573226489565" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="col-md-4 text-md-end text-center">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <p>Correo: <a href="mailto:lasmercedescmf@gmail.com">lasmercedescmf@gmail.com</a><br>
+                    Teléfono: +573123068317</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body> 
+
+</html>

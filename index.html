@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Casa de Convenciones Las Mercedes</title>
+    
+    <!-- Enlaces a CSS y fuentes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> <!-- Animate.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Brush+Script+MT&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 30px;
+            background-color: rgb(151, 229, 132); /* Fondo */
+        }
+
+        /* Estilos de la barra de navegación */
+        .navbar-nav .nav-link {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+            color: #101010;
+            text-decoration: none;
+            transition: font-family 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Estilos del botón "Reservar ahora" */
+        .reservar-btn {
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(135deg, #25d468, #04562c);
+            color: rgb(21, 21, 21);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .reservar-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #02401e, #02401e);
+        }
+
+        /* Estilos del footer */
+        footer {
+            background-color: rgb(151, 229, 132);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            color: #007bff;
+            font-size: 30px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        footer h5:hover {
+            color: #0056b3;
+        }
+
+        footer p:hover {
+            color: #333;
+        }
+
+        /* Estilos de las tarjetas de características */
+        .feature-card {
+            background-color: #def18d;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos de las reseñas */
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .review {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .review:hover {
+            transform: scale(1.05);
+            background-color: #f1f1f1;
+        }
+
+        /* Media Queries para hacerlo responsive */
+        @media (max-width: 768px) {
+            .reviews {
+                display: block;
+            }
+
+            .review {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .review {
+                width: 48%;
+            }
+        }
+
+        /* Estilos del carrusel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem; /* Cambié el tamaño para mejor visualización */
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+        }
+
+        /* Animaciones */
+        @keyframes movimiento {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        .review {
+            animation: movimiento 2s infinite;
+        }
+
+        /* Estilos de las tarjetas */
+        .card {
+            transition: transform 0.4s ease;
+            background-color: #d9f4e5;
+        }
+
+        .card:hover {
+            transform: translate(10px, -10px);
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0); }
+            25% { transform: translate(-5px, 5px); }
+            50% { transform: translate(5px, -5px); }
+            75% { transform: translate(-5px, -5px); }
+            100% { transform: translate(0); }
+        }
+
+        .card:hover {
+            animation: shake 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Proyecto iglesia/imagenes/image10.jpg" alt="Logo" width="150px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="eventos.html">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="reservas.html" class="reservar-btn animate__animated animate__fadeIn">
+                    <i>🔖</i> Reservar ahora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Proyecto iglesia/imagenes/imagen capilla.jpeg" class="d-block w-100" alt="Capilla Las Mercedes" style="max-height: 500px;">
+                <div class="text-overlay">Bienvenidos a Las Mercedes</div>
+            </div>
+            <div class="carousel-item">
+                <img src="../Proyecto iglesia/imagenes/trabajo1.jpeg" class="d-block w-100" alt="Capilla" style="max-height: 500px;">
+                <div class="text-overlay">Eventos especiales</div>
+            </div>
+            <div class="carousel-item">
+                <img src="../Proyecto iglesia/imagenes/trabajo2.jpeg" class="d-block w-100" alt="Alcaldía de Sasaima" style="max-height: 500px;">
+                <div class="text-overlay">Rodeados de naturaleza</div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div> <br>
+    
+    <!-- Características de la ubicación -->
+    <div class="container my-12">
+        <div class="row">
+            <div class="col-md-6 animate__animated animate__fadeInLeft">
+                <div class="feature-card text-center">
+                    <i class="fas fa-tree feature-icon"></i>
+                    <h5>Rodeado de naturaleza</h5>
+                </div>
+            </div>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+                <div class="feature-card text-center">
+                    <i class="fas fa-bowling-ball feature-icon"></i>
+                    <h5>Capilla, auditorio, restaurante y más</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjetas de información -->
+    <div class="container my-3">
+        <div class="row g-3 justify-content-center">
+            <div class="col-md-6 animate__animated animate__zoomIn">
+                <div class="card h-100 shadow-lg">
+                    <img src="../Proyecto iglesia/imagenes/SERVICIOSS.jpeg" class="card-img-top" alt="Ubicación" style="height: 250px;" width="200">
+                    <div class="card-body">
+                        <h5 class="card-title">Ubicación</h5>
+                        <p class="card-text">Nos encontramos ubicados en Sasaima, Cundinamarca, <br>
+                            en el Kilómetro 81 de la vía Bogotá a Villeta, después de Facatativá y Alban, a 3 kilómetros antes de Sasaima.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="contacto.html" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 animate__animated animate__zoomIn">
+                <div class="card h-100 shadow-lg">
+                    <img src="../Proyecto iglesia/imagenes/trabajo33.jpeg" class="card-img-top" alt="Servicios" style="height: 250px;" width="200">
+                    <div class="card-body">
+                        <h5 class="card-title">Servicios</h5>
+                        <p class="card-text">Ofrecemos alojamiento, amplias zonas verdes, un restaurante, cancha múltiple, auditorio y capilla.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="servicios.html" class="btn btn-primary">Explorar servicios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Columna 1: Sobre Nosotros -->
+                <div class="col-md-4 animate__animated animate__fadeIn">
+                    <h5 class="text-uppercase">Sobre Nosotros</h5>
+                    <p>Diseñado para albergar eventos como congresos, retiros, convivencias, seminarios y talleres. Nuestras instalaciones son utilizadas por entidades públicas, privadas, universidades y comunidades religiosas para realizar eventos institucionales y familiares, tanto a nivel nacional como internacional.</p>
+                </div>
+
+                <!-- Columna 2: Redes Sociales -->
+                <div class="col-md-4 text-center animate__animated animate__fadeIn">
+                    <h5 class="text-uppercase">Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="www.facebook.com/pages/Casa%20De%20Convivencias%20Las%20Mercedes%20-%20Misioneros%20Claretianos/230724813789240/about/?ref=page_internal" class="me-3" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://wa.me/573123068317" class="me-3" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="col-md-4 text-md-end text-center animate__animated animate__fadeIn">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <p>Correo: <a href="mailto:lasmercedescmf@gmail.com">lasmercedescmf@gmail.com</a><br>
+                    Teléfono: +57 3123068317</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap y JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

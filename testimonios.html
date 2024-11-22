@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Diseño Iglesia</title>
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(10, 9, 9);
+        color: #333;
+      }
+
+      
+      h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #13bceb;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1:hover {
+  text-shadow: 2px 2px 10px #d7ec15, 0 0 15px #d7ec15;
+  transition: text-shadow 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+      p {
+        color: #151715;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+
+      /* Estilos para el menú */
+      .navbar {
+        background-color: #1b520a;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar:hover {
+        background-color: #0e0f0f;
+      }
+
+      .navbar-brand img {
+        border-radius: 8%;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-brand img:hover {
+        transform: scale(1.1);
+      }
+
+      .nav-link {
+        color: #ffffff !important;
+        margin-right: 10px;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #ffcc00;
+        transition: width 0.3s ease;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+      }
+
+      .nav-link:hover {
+        color: #ffcc00 !important;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .btn-outline-success {
+        color: #ffffff;
+        border-color: #ffffff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .btn-outline-success:hover {
+        background-color: #ffcc00;
+        border-color: #ffcc00;
+        color: #2dd21a;
+      }
+
+      /* Estilos para el footer */
+      footer {
+        background-color: #1b520a;
+        color: white;
+        padding: 20px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      footer:hover {
+        background-color: #0e0f0f;
+      }
+
+      footer h5 {
+        border-bottom: 2px solid #ffcc00;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      footer p, footer a {
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #0e0f0f;
+      }
+
+      footer .social-icons i {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      footer .social-icons i:hover {
+        color: #ffcc00;
+        transform: scale(1.2);
+      }
+
+      /* Estilos para testimonios */
+      h2 {
+        text-align: center;
+        color: #dddbd2;
+        margin-top: 20px;
+      }
+
+      .quote {
+        color: #9ca7c0;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-container {
+        background-color: #f8f8f8;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .author {
+        text-align: right;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .rating {
+        color: #ffcc00;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-container:hover {
+        background-color: #ececec;
+        transition: background-color 0.3s ease;
+      }
+
+      .add-testimonial {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+      }
+
+      label {
+        color: white;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../Proyecto iglesia/imagenes/image10.jpg" alt="" width="150px" class="img-fluid">
+        </a>
+        <h1>fundación nuevo mundo constructores de paz</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="eventos.html">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservas.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="instalaciones.html">Instalaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonios.html">Testimonios</a>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Testimonios -->
+    <section class="testimonials">
+      <h2>Testimonios de nuestros clientes</h2>
+
+      <div class="container">
+        <!-- Testimonio 1 -->
+        <div class="testimonial-container">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="quote">"Me encanta el lugar, las instalaciones son impecables y el ambiente es muy agradable. ¡Quiero volver!"</p>
+          <p class="author">- Andrés Camilo Rincón</p>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="testimonial-container">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="quote">"Un lugar perfecto para compartir con la familia, ¡me encantó la atención!"</p>
+          <p class="author">- Mariana López</p>
+        </div>
+      </div>
+
+      <div class="add-testimonial">
+        <h3>Añade tu testimonio</h3>
+        <form action="guardar_testimonio.php" method="POST">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="testimonial">Testimonio:</label>
+          <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
+
+          <button type="submit">Enviar Testimonio</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Nuestra casa</h5>
+        <p>
+          Centro de convenciones <br>
+          Las Mercedes, Sasaima Cundinamarca <br>
+          Km. 68 Vía Bogotá Villeta <br>
+          Cel: 312 3068317 <br>
+          www.lasmercedes.co <br>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Síguenos</h5>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/pages/Casa-De-Convivencias-Las-Mercedes-Misioneros-Claretianos/230724813789240"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <a href="mailto:lasmercedescmf@gmail.com" style="text-decoration: none; color: inherit;">lasmercedescmf@gmail.com</a>
+  </div>
+</footer>
+
+<!-- Optional JavaScript; choose one of the two! -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-fA2LT8Bde5yJ9I2xOP3Xg5vD5klI6SR0QnNfUeVf56MtyvXITdv26PsyL5UHA64" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-8M0fYNYW1bH8sR0p48USAlNQHLjsaA6t0mVCR7NhKBYFqO0V5UO5HbUMZgoDsmLp" crossorigin="anonymous"></script>
+</body>
+</html>

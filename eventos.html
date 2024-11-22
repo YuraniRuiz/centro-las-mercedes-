@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barra de Navegación y Footer</title>
+    
+    <!-- Enlaces a CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(151, 229, 132); /* Fondo */
+        }
+
+        h2 {
+            color: #04562c;
+            text-align: center;
+            margin: 20px 0; /* Espacio superior e inferior */
+        }
+
+        /* Estilos de la barra de navegación */
+        .navbar-nav .nav-link {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+            color: #101010;
+            text-decoration: none;
+            transition: font-family 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Estilos del botón "Reservar ahora" */
+        .reservar-btn {
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(135deg, #25d468, #04562c);
+            color: rgb(21, 21, 21);
+            padding: 10px 20px; /* Ajustar padding */
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .reservar-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #02401e, #02401e);
+        }
+
+        /* Estilos del footer */
+        footer {
+            background-color: rgb(151, 229, 132);
+            padding: 30px 0; /* Ajustar padding */
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 10px; /* Ajustar margen */
+            color: #007bff;
+            font-size: 30px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        footer h5:hover {
+            color: #0056b3;
+        }
+
+        footer p:hover {
+            color: #333;
+        }
+
+        /* Estilos de las tarjetas */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+            background-color: #a3f5c4; /* Color de fondo de la tarjeta */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Nueva animación de escala */
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-body {
+            padding: 15px; /* Ajustar padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 15px; /* Bordes redondeados */
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Estilos del párrafo junto a la imagen */
+        .info-paragraph {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-paragraph:hover {
+            background-color: rgba(255, 255, 255, 1);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Proyecto iglesia/imagenes/image10.jpg" alt="Logo" width="150px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="reservas.html" class="reservar-btn">
+                    <i>🔖</i> Reservar ahora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+ <!-- Tarjeta con párrafo e imagen en columnas -->
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="imagenes/auditorio.jpeg" alt="Centro de Convenciones" class="img-fluid" style="height: auto; max-height: 320px; object-fit: cover;">
+            <p>Algunas de las características del Centro de Convenciones Las Mercedes incluyen:</p>
+            <ul>
+                <li>Instalaciones amplias y versátiles</li>
+                <li>Ambiente ideal para conferencias, talleres y reuniones</li>
+                <li>Auditorio con capacidad para 120 personas</li>
+                <li>Diseñado para garantizar comodidad y funcionalidad</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2>Centro de Convenciones Las Mercedes</h2>
+            <p class="info-paragraph">El Centro de Convenciones Las Mercedes es el lugar perfecto para la realización de eventos. Con instalaciones amplias y versátiles, ofrecemos un ambiente ideal para conferencias, talleres, celebraciones y reuniones. Nuestro auditorio, con capacidad para 120 personas, está diseñado para garantizar comodidad y funcionalidad.</p>
+           
+           
+            <p>Contacta con nosotros para más información sobre nuestras instalaciones y servicios.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Sección de Eventos -->
+<main class="container my-6">
+    <section id="eventos">
+        <h2 class="text-center">Próximos Eventos</h2> <!-- Título en negro -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Retiro Espiritual</h3>
+                        <p class="card-text">Un retiro espiritual enfocado en la reflexión personal y la renovación de la fe.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Conferencia de Jóvenes</h3>
+                        <p class="card-text">Una conferencia especial para jóvenes, con talleres y charlas sobre liderazgo y espiritualidad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Concierto de Alabanza</h3>
+                        <p class="card-text">Un concierto de música cristiana con invitados especiales. Abierto a toda la comunidad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Día de la Familia</h3>
+                        <p class="card-text">Un día especial lleno de actividades y juegos para disfrutar en familia y fortalecer los lazos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Retiro de Parejas</h3>
+                        <p class="card-text">Un retiro diseñado para parejas, enfocado en la comunicación y el fortalecimiento de la relación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" onclick="animateCard(this)">
+                    <div class="card-body">
+                        <h3 class="card-title">Retiro de Meditación</h3>
+                        <p class="card-text">Un espacio para la meditación y el silencio, enfocado en la conexión espiritual y la paz interior.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <!-- Columna 1: Sobre Nosotros -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Sobre Nosotros</h5>
+                <p>Diseñado para albergar eventos como congresos, retiros, convivencias, seminarios y talleres. Nuestras instalaciones son utilizadas por entidades públicas, privadas, universidades y comunidades religiosas para realizar eventos institucionales y familiares, tanto a nivel nacional como internacional.</p>
+            </div>
+
+            <!-- Columna 2: Redes Sociales -->
+            <div class="col-md-4 text-center">
+                <h5 class="text-uppercase">Síguenos</h5>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://wa.me/573226489565" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div class="col-md-4 text-md-end text-center">
+                <h5 class="text-uppercase">Contacto</h5>
+                <p>Correo: <a href="mailto:lasmercedescmf@gmail.com">lasmercedescmf@gmail.com</a><br>
+                Teléfono: +57 3123068317</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function animateCard(card) {
+        // Cambia el color de fondo de la tarjeta
+        card.style.backgroundColor = card.style.backgroundColor === 'lightblue' ? '#caeabc' : 'lightblue';
+        // Muestra un mensaje en la consola
+        console.log(`Tarjeta: ${card.querySelector('.card-title').innerText} fue clickeada.`);
+    }
+</script>
+</body> 
+
+</html>
